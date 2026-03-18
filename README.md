@@ -1,18 +1,18 @@
-# 🚗 Smart Driver Monitoring Dashboard
-**Internship Project — Weeks 4 & 5**
+# Smart Driver Monitoring Dashboard
+**Internship Project - Weeks 4 & 5**
 AI & Analytics for Smart Driver Monitoring
 
 ---
 
 ## Overview
-An AI-powered dashboard that combines machine learning models built across Modules 1–6
+An AI-powered dashboard that combines machine learning models built across Modules 1-6
 into a single interactive Streamlit application for driver monitoring and analysis.
 The app covers driver rating prediction, violation detection, passenger feedback sentiment
 analysis, and document forgery detection.
 
 ---
 
-## 📂 Datasets Used
+## Datasets Used
 
 ### Real Datasets
 | Dataset | File | Used In |
@@ -33,14 +33,14 @@ analysis, and document forgery detection.
 ### Image Datasets
 | Dataset | Used In |
 |---------|---------|
-| Driver License Images (`data/licenses/genuine/` — 20 images) | Forgery detection testing (Module 6, Tab 3) |
-| Driver License Images (`data/licenses/forged/` — 20 images) | Forgery detection testing (Module 6, Tab 3) |
+| Driver License Images (`data/licenses/genuine/` - 20 images) | Forgery detection testing (Module 6, Tab 3) |
+| Driver License Images (`data/licenses/forged/` - 20 images) | Forgery detection testing (Module 6, Tab 3) |
 | Highway Traffic Videos | Visual analysis reference (Module 6) |
 | YOLO Truck Datasets | CNN forgery model training (Module 6) |
 
 ---
 
-## ⚙️ Setup
+## Setup
 
 ### 1. Clone the Repository
 ```bash
@@ -56,45 +56,42 @@ conda activate driver-ai
 
 ### 3. Install Dependencies
 ```bash
-pip install pandas numpy scikit-learn xgboost matplotlib seaborn \
-            jupyterlab opencv-python pytesseract tensorflow \
-            transformers sentencepiece spacy streamlit joblib scipy
+pip install pandas numpy scikit-learn xgboost matplotlib seaborn jupyterlab opencv-python pytesseract tensorflow transformers sentencepiece spacy streamlit joblib scipy
 ```
 
 ### 4. Install Tesseract (OS-level)
 - **Windows:** Download from https://github.com/UB-Mannheim/tesseract/wiki
-- **Mac:** `brew install tesseract`
-- **Linux:** `sudo apt install tesseract-ocr`
+- **Mac:** brew install tesseract
+- **Linux:** sudo apt install tesseract-ocr
 
 ---
 
-## 🚀 Running the App
-
+## Running the App
 ```bash
 conda activate driver-ai
 cd demos/driver_demo
 streamlit run streamlit_app.py
 ```
 
-Then open your browser at: **http://localhost:8501**
+Then open your browser at: http://localhost:8501
 
 ---
 
-## 📊 App Features
+## App Features
 
-### Tab 1 — Driver Rating & Violations
-- Upload `transportation_logistic_cleaned.csv` → predicted driver ratings
-- Upload `driver_behavior_cleaned.csv` → violation flags per driver
+### Tab 1 - Driver Rating & Violations
+- Upload `transportation_logistic_cleaned.csv` to get predicted driver ratings
+- Upload `driver_behavior_cleaned.csv` to get violation flags per driver
 - Models used: XGBoost (ratings), XGBoost with flags (violations)
 
-### Tab 2 — Feedback Sentiment
-- Type feedback manually → instant sentiment result with confidence score
-- Upload `feedback.csv` → batch sentiment analysis with accuracy vs ground truth
+### Tab 2 - Feedback Sentiment
+- Type feedback manually for instant sentiment result with confidence score
+- Upload `feedback.csv` for batch sentiment analysis with accuracy vs ground truth
 - Model used: TF-IDF + Logistic Regression (trained with driver behavior features)
 - Achieved: **100% accuracy** on feedback dataset
 
-### Tab 3 — Document Forgery Check
-- Upload a license/vehicle image → full forgery detection pipeline
+### Tab 3 - Document Forgery Check
+- Upload a license/vehicle image to run the full forgery detection pipeline
 - OCR plate extraction (Tesseract)
 - Image forensics (blur + noise detection)
 - CNN forgery classification (MobileNetV2)
@@ -102,18 +99,18 @@ Then open your browser at: **http://localhost:8501**
 
 ---
 
-## 🤖 Models
+## Models
 
 | Module | Model | Trained On |
 |--------|-------|-----------|
-| 3 — Ratings | XGBoost Regressor | `transportation_logistic_cleaned.csv` |
-| 4 — Sentiment | TF-IDF + Logistic Regression | `feedback.csv` + `driver_behavior_cleaned.csv` |
-| 5 — Violations | XGBoost Classifier (with flags) | `driver_behavior_cleaned.csv` |
-| 6 — Forgery | MobileNetV2 CNN + OCR + Forensics | YOLO Truck Datasets + `data/licenses/` |
+| 3 - Ratings | XGBoost Regressor | `transportation_logistic_cleaned.csv` |
+| 4 - Sentiment | TF-IDF + Logistic Regression | `feedback.csv` + `driver_behavior_cleaned.csv` |
+| 5 - Violations | XGBoost Classifier (with flags) | `driver_behavior_cleaned.csv` |
+| 6 - Forgery | MobileNetV2 CNN + OCR + Forensics | YOLO Truck Datasets + `data/licenses/` |
 
 ---
 
-## ⚠️ Known Limitations
+## Known Limitations
 
 - The forgery CNN was trained on truck imagery (YOLO dataset).
   Noise-based forgeries in license images may be classified as LOW risk.
@@ -123,13 +120,16 @@ Then open your browser at: **http://localhost:8501**
 
 ---
 
-## 📝 Deliverables
+## Deliverables
 
-- ✅ Jupyter notebooks for Modules 1–6 (well-documented)
-- ✅ Streamlit demo dashboard (Module 7)
-- ✅ Trained models saved in `src/models/`
-- ✅ GitHub repository with clear README
+- Jupyter notebooks for Modules 1-6 (well-documented)
+- Streamlit demo dashboard (Module 7)
+- Trained models saved in src/models/
+- GitHub repository with clear README
 
 ---
 
-## 👤 Yodico, Jan Marcus C.
+## Author
+Yodico, Jan Marcus C.
+Internship Project - Weeks 4 & 5
+AI & Analytics for Smart Driver Monitoring
