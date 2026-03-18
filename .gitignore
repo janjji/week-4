@@ -1,3 +1,23 @@
-*.csv 
-*.xlsx 
-*.xls 
+# Data files
+*.csv
+*.xlsx
+*.xls
+# Large dataset folders
+Highway Traffic Videos/
+Yolo Truck Datasets/
+Delivery truck trips data/
+Driver Behavior and Route Anomaly Data*/
+Driving Behavior/
+Transportation ang Logistics*/
+# Large model files
+*.keras
+*.h5
+# Jupyter
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+# Environment
+.env
+env/
+venv/
+.conda/
